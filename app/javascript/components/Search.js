@@ -6,6 +6,9 @@ class Search extends Component {
     }
 
     render() {
+        const searchResults = this.props.searchResults
+            .map( curr => <li key={curr.id}>{curr.name}</li>)
+
         return (
             <div>
                 <h1>Crypto currency portfolio calculator</h1>
@@ -16,6 +19,9 @@ class Search extends Component {
                                autoComplete="off" type="text" name="name"
                                placeholder="Ex: Bitcoint, Litecoint, Ethereum"
                                value={this.props.name} className="field"/>
+                    </div>
+                    <div className="currencies-list">
+                        {searchResults}
                     </div>
                 </form>
             </div>
