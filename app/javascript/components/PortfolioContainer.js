@@ -56,7 +56,9 @@ class PortfolioContainer extends Component {
         })
             .then((data) => {
                 this.setState({
-                    portfolio: [...this.state.portfolio, data.data]
+                    portfolio: [...this.state.portfolio, data.data],
+                    amount: '',
+                    active_currency: null
                 })
             })
             .catch((data) => {
@@ -71,7 +73,6 @@ class PortfolioContainer extends Component {
     }
 
     render() {
-
         const searchOrCalculate = this.state.active_currency ?
             <Calculate
                 handleSubmit={this.handleSubmit}
