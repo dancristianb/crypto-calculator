@@ -21,7 +21,7 @@ class PortfolioContainer extends Component {
     }
 
     handleChange(e) {
-        axios.post('http://localhost:3000/search', {
+        axios.post('/search', {
             search: e.target.value
         })
             .then((data) => {
@@ -51,7 +51,7 @@ class PortfolioContainer extends Component {
         const id = this.state.active_currency.id
         const amount = this.state.amount
 
-        axios.post('http://localhost:3000/calculate', {
+        axios.post('/calculate', {
             id: id,
             amount: amount
         })
