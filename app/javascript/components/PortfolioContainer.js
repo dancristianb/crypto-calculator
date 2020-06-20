@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Search from "./Search";
 import Calculate from "./Calculate";
 import axios from 'axios'
+import Portfolio from './Portfolio'
 
 class PortfolioContainer extends Component {
     constructor(props) {
@@ -90,6 +91,7 @@ class PortfolioContainer extends Component {
         return (
             <div>
                 {searchOrCalculate}
+                <Portfolio portfolio={this.state.portfolio}/>
             </div>
         )
     }
