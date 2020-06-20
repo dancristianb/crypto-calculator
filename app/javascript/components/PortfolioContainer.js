@@ -15,6 +15,7 @@ class PortfolioContainer extends Component {
         }
 
         this.handleChange = this.handleChange.bind(this)
+        this.handleSelect = this.handleSelect.bind(this)
     }
 
     handleChange(e) {
@@ -32,10 +33,24 @@ class PortfolioContainer extends Component {
             })
     }
 
+    handleSelect(e) {
+        e.preventDefault()
+        const id = e.target.getAttribute('data-id')
+        const activeCurrency = this.state.search_results.find(
+            item => item.id == parseInt(id)
+        )
+        this.setState({
+            active_currency: activeCurrency
+        })
+    }
+
     render() {
         return (
             <div>
-                <Search searchResults={this.state.search_results} handleChange={this.handleChange}/>
+                <Search searchResults={this.state.search_results}
+                        handleChange={this.handleChange}
+                        handleSelect={this.handleSelect}
+                />
                 <Calculate/>
             </div>
         )

@@ -7,7 +7,16 @@ class Search extends Component {
 
     render() {
         const searchResults = this.props.searchResults
-            .map( curr => <li key={curr.id}>{curr.name}</li>)
+            .map(curr =>
+                <li key={curr.id}
+                    data-id={curr.id}
+                    className="currency-list-item"
+                    onClick={this.props.handleSelect}
+                >
+                    <a href="#" className="currency">
+                        <span>{curr.name}</span> <span className="currency_symbol">{curr.currency_symbol}</span>
+                    </a>
+                </li>)
 
         return (
             <div>
