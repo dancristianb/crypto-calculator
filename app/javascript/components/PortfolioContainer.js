@@ -90,10 +90,10 @@ class PortfolioContainer extends Component {
 
         return (
             <div className="grid">
-                <div className="bg-gray-100 p-4">
+                <div className="block bg-gray-100 p-4">
                     {searchOrCalculate}
                 </div>
-                <div className="bg-gray-800">
+                <div className="block bg-gray-800 h-screen">
                     <Portfolio portfolio={this.state.portfolio}/>
                 </div>
             </div>
