@@ -14,11 +14,11 @@ class Portfolio extends Component {
 
         return (
             <div>
-                <div className="portfolio-value">
-                    <div className="portfolio-value--header">
+                <div className="portfolio-value text-white p-4 px-6">
+                    <div className="text-lg">
                         Your total Portfolio value is:
                     </div>
-                    <div className="portfolio-value--content">{total}</div>
+                    <div className="text-2xl">{total}</div>
                 </div>
                 <div className="portfolio-items">
                     {portfolioItems}
